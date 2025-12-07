@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 240 20% 8%;
+    --card-foreground: 0 0% 98%;
+    --primary: 270 100% 75%;
+    --primary-foreground: 240 10% 4%;
+    --secondary: 195 100% 80%;
+    --secondary-foreground: 240 10% 4%;
+    --accent: 45 90% 70%;
+    --accent-foreground: 240 10% 4%;
+    --muted: 240 15% 15%;
+    --muted-foreground: 195 100% 80%;
+    --border: 240 15% 20%;
+    --input: 240 15% 20%;
+    --ring: 270 100% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#00010A] text-foreground;
+    font-family: 'Inter', 'Geist Sans', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-black/20 backdrop-blur-xl border border-white/10;
+  }
+  
+  .neon-edge {
+    box-shadow: 0 0 20px rgba(178, 107, 255, 0.3),
+                0 0 40px rgba(178, 107, 255, 0.1);
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300;
+    transform-style: preserve-3d;
+  }
+  
+  .card-hover:hover {
+    transform: perspective(800px) rotateX(5deg) rotateY(5deg);
+  }
+}
+
