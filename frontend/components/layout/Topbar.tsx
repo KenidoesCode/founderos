@@ -3,7 +3,7 @@
 import { Menu, Bell } from "lucide-react";
 import { useAppStore } from "@/lib/state";
 
-export function Topbar() {
+export default function Topbar() {
   const { sidebarOpen, setSidebarOpen, user, tenant } = useAppStore();
 
   return (

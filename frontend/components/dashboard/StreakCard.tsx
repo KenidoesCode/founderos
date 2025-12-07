@@ -3,7 +3,7 @@
 import { Flame } from "lucide-react";
 import { useAppStore } from "@/lib/state";
 
-export function StreakCard() {
+export default function StreakCard() {
   const streak = useAppStore((state) => state.streak);
 
   return (

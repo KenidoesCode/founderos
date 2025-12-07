@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAppStore } from "@/lib/state";
 import api from "@/lib/api";
-import { Sidebar } from "@/components/layout/Sidebar";
-import { Topbar } from "@/components/layout/Topbar";
-import { GenomeHashCard } from "@/components/genome/GenomeHashCard";
-import { MintModal } from "@/components/genome/MintModal";
+import Sidebar from "@/components/layout/Sidebar";
+import Topbar from "@/components/layout/Topbar";
+import GenomeHashCard from "@/components/genome/GenomeHashCard";
+import MintModal from "@/components/genome/MintModal";
 
 export default function GenomePage() {
   const router = useRouter();

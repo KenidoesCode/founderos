@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useAppStore } from "@/lib/state";
 import api from "@/lib/api";
-import { Sidebar } from "@/components/layout/Sidebar";
-import { Topbar } from "@/components/layout/Topbar";
+import Sidebar from "@/components/layout/Sidebar";
+import Topbar from "@/components/layout/Topbar";
 import { ChatWindow } from "@/components/cofounder/ChatWindow";
 import { PromptBar } from "@/components/cofounder/PromptBar";
 

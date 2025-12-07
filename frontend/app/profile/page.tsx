@@ -2,8 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import { useAppStore } from "@/lib/state";
-import { Sidebar } from "@/components/layout/Sidebar";
-import { Topbar } from "@/components/layout/Topbar";
+import Sidebar from "@/components/layout/Sidebar";
+import Topbar from "@/components/layout/Topbar";
 
 export default function ProfilePage() {
   const router = useRouter();

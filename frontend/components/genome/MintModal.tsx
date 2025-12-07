@@ -11,7 +11,7 @@ interface MintModalProps {
   onSuccess: () => void;
 }
 
-export function MintModal({ hash, onClose, onSuccess }: MintModalProps) {
+export default function MintModal({ hash, onClose, onSuccess }: MintModalProps) {
   const { tenant } = useAppStore();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");

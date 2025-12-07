@@ -4,7 +4,7 @@ import { Rocket } from "lucide-react";
 import { useAppStore } from "@/lib/state";
 import { useRouter } from "next/navigation";
 
-export function ActiveStartupCard() {
+export default function ActiveStartupCard() {
   const router = useRouter();
   const activeStartup = useAppStore((state) => state.activeStartup);
 

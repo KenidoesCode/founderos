@@ -7,7 +7,7 @@ interface GenomeHashCardProps {
   pointer?: string;
 }
 
-export function GenomeHashCard({ hash, pointer }: GenomeHashCardProps) {
+export default function GenomeHashCard({ hash, pointer }: GenomeHashCardProps) {
   return (
     <motion.div
       initial={{ rotateY: 0, opacity: 0 }}

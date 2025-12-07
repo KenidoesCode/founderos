@@ -11,7 +11,7 @@ interface PriorityCardProps {
   } | null;
 }
 
-export function PriorityCard({ prediction }: PriorityCardProps) {
+export default function PriorityCard({ prediction }: PriorityCardProps) {
   if (!prediction) {
     return (
       <div className="glass rounded-2xl p-6">
