@@ -2,16 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import {
   LayoutDashboard,
   MessageSquare,
   Dna,
   Sparkles,
   Users,
-  Timeline,
+  Clock,
   Settings,
   User,
 } from "lucide-react";
+
 import { useAppStore } from "@/lib/state";
 import { cn } from "@/lib/utils";
 
@@ -21,12 +23,12 @@ const navItems = [
   { href: "/genome", label: "Genome", icon: Dna, shortcut: "G" },
   { href: "/startup-generator", label: "Startup Generator", icon: Sparkles, shortcut: "S" },
   { href: "/swarm", label: "Swarm Matching", icon: Users, shortcut: "W" },
-  { href: "/timewarp", label: "Time Warp", icon: Timeline, shortcut: "T" },
+  { href: "/timewarp", label: "Time Warp", icon: Clock, shortcut: "T" },
   { href: "/settings", label: "Settings", icon: Settings, shortcut: "," },
   { href: "/profile", label: "Profile", icon: User, shortcut: "P" },
 ];
 
-export function Sidebar() {
+export default function Sidebar() {
   const pathname = usePathname();
   const sidebarOpen = useAppStore((state) => state.sidebarOpen);
 
@@ -87,4 +89,3 @@ export function Sidebar() {
     </div>
   );
 }
-
