@@ -10,6 +10,8 @@ import genomeRoutes from "./modules/genome/routes.js";
 import startupRoutes from "./modules/startup/routes.js";
 import timewarpRoutes from "./modules/timewarp/routes.js";
 import taskRoutes from "./modules/tasks/routes.js";
+import aiAnalysisRoutes from "./modules/aianalysis/route.js";
+
 
 const app = express();
 
@@ -32,6 +34,7 @@ app.use("/api/genome", genomeRoutes);
 app.use("/api/startup", startupRoutes);
 app.use("/api/timewarp", timewarpRoutes);
 app.use("/api/tasks", taskRoutes);
+app.use("/api/aianalysis", aiAnalysisRoutes);
 
 // Error handler
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {

@@ -22,7 +22,7 @@ const navItems = [
   { href: "/cofounder", label: "Cofounder", icon: MessageSquare, shortcut: "C" },
   { href: "/genome", label: "Genome", icon: Dna, shortcut: "G" },
   { href: "/startup-generator", label: "Startup Generator", icon: Sparkles, shortcut: "S" },
-  { href: "/swarm", label: "Swarm Matching", icon: Users, shortcut: "W" },
+  { href: "/aianalysis", label: "Startup Analyzer", icon: Users, shortcut: "W" },
   { href: "/timewarp", label: "Time Warp", icon: Clock, shortcut: "T" },
   { href: "/settings", label: "Settings", icon: Settings, shortcut: "," },
   { href: "/profile", label: "Profile", icon: User, shortcut: "P" },
