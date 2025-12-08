@@ -2,23 +2,47 @@
 
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
-import api from "@/lib/api";     // ← IMPORTANT: using your Axios wrapper
+import api from "@/lib/api";
+import { useAppStore } from "@/lib/state";
 
 export default function Client() {
   const [idea, setIdea] = useState("");
   const [loading, setLoading] = useState(false);
   const [report, setReport] = useState<any>(null);
 
+  const { tenant, token } = useAppStore();  
+
   async function generateReport() {
+    if (!tenant) {
+      setReport({ output: "No tenant selected. Please log in again." });
+      return;
+    }
+
     setLoading(true);
     setReport(null);
 
     try {
-      const res = await api.post("/api/aianalysis/run", { idea });
+      const res = await api.post(
+        "/api/aianalysis/run",
+        {
+          idea,
+          tenantId: tenant.id,  
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, 
+          },
+        }
+      );
+
       setReport({ output: res.data.data });
-    } catch (err) {
-      console.error(err);
-      setReport({ output: "Something went wrong. Please try again." });
+    } catch (err: any) {
+      console.error("Analysis error:", err);
+      setReport({
+        output:
+          err?.response?.data?.error?.message ||
+          "Something went wrong. Try again.",
+      });
     }
 
     setLoading(false);
@@ -45,7 +69,7 @@ export default function Client() {
         </label>
 
         <textarea
-          className="w-full p-4 border border-slate-700 rounded-xl bg-[#0b0b12] text-white focus:outline-none focus:ring-2 focus:ring-[#B26BFF]/40 transition"
+          className="w-full p-4 border border-slate-700 rounded-xl bg-[#070708] text-white focus:outline-none focus:ring-2 focus:ring-[#B26BFF]/40 transition"
           rows={5}
           placeholder="Example: An AI tool that automates influencer marketing for small brands..."
           value={idea}
